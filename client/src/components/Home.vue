@@ -16,7 +16,7 @@
             <hr>
 
             <!-- this is a single post which loops through the Post api and displays all of them -->
-            <div class="post d-flex flex-row" v-for="(post, i) in Post" :key="i">
+            <div class="post d-flex flex-row" v-for="(singlepost, i) in Post" :key="i">
                 <!-- like buttons -->
                 <div class="like d-flex flex-column justify-content-center">
                     <!-- Like button -->
@@ -35,14 +35,14 @@
                 <!-- card -->
                 <div class="card" >
                     <div class="card-body">
-                        <h3 class="card-title">{{post.title}}</h3>
+                        <h3 class="card-title">{{singlepost.title}}</h3>
                         <!-- need to fix date formatting -->
-                        <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(post.datePosted).fromNow()}} by {{post.user}}</h6>
-                        <span class="badge badge-primary">{{post.class}}</span> <span class="badge badge-success">{{post.professor}}</span>
-                        <p class="card-text">{{post.post}}</p>
+                        <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(singlepost.datePosted).fromNow()}} by {{singlepost.user}}</h6>
+                        <span class="badge badge-primary">{{singlepost.class}}</span> <span class="badge badge-success">{{singlepost.professor}}</span>
+                        <p class="card-text">{{singlepost.post}}</p>
                         <!-- add number of comments and like button -->
                         <router-link to="SinglePost" class="card-link stretched-link"> comments </router-link>
-                        <a href="#" class="notlink">{{post.likes}} likes</a>
+                        <a href="#" class="notlink">{{singlepost.likes}} likes</a>
                     </div>
                 </div>
             </div>
@@ -80,6 +80,7 @@ export default {
             console.log(err)
         }
     },
+    
 }
 </script>
 
@@ -98,7 +99,7 @@ a:hover{
     padding-top: 2vh;
 }
 .page-heading{
-    margin: 0;
+    padding-top: 1vh;
 }
 .post{
     margin-top: 2rem;
