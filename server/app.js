@@ -5,10 +5,10 @@ const cors = require('cors')
 const logger = require('morgan')
 const mongoose = require('mongoose')
 
-//set up express ap
+//set up express app
 const app = express()
 
-//connect to mongoose
+//connect to DB with mongoose
 mongoose.connect('mongodb+srv://user:12345@cis4339-watty.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true, useUnifiedTopology: true
 })
