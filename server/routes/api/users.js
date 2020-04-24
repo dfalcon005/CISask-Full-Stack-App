@@ -19,10 +19,13 @@ router.use(cors())
 router.post(
     "/signup",
     [
+        // check username
         check("username", "Please Enter a Valid Username")
         .not()
         .isEmpty(),
+        // check email
         check("email", "Please enter a valid email").isEmail(),
+        // check password
         check("password", "Please enter a valid password").isLength({
             min: 6
         })
@@ -35,12 +38,12 @@ router.post(
             });
         }
 
-        const {
-            username,
-            email,
-            password
-        } = req.body;
+        //set User object using userSchema
+        const User = req.body;
+
+        // try and create token if it is a new user
         try {
+          // check to see if user already exist (username or email)
             let user = await User.findOne({
                 email
             });
@@ -50,12 +53,9 @@ router.post(
                 });
             }
 
-            user = new User({
-                username,
-                email,
-                password
-            });
+            user = new User();
 
+            // hash  the password
             const salt = await bcrypt.genSalt(10);
             user.password = await bcrypt.hash(password, salt);
 
@@ -90,11 +90,11 @@ router.post(
 router.post(
     "/login",
     [
+      check("username, please enter a valid username."),
       check("email", "Please enter a valid email").isEmail(),
-      check("password", "Please enter a valid password").isLength({
-        min: 6
-      })
+      check("password", "Please enter a valid password")
     ],
+
     async (req, res) => {
       const errors = validationResult(req);
   
@@ -103,17 +103,21 @@ router.post(
           errors: errors.array()
         });
       }
-  
+      
+
       const { email, password } = req.body;
       try {
         let user = await User.findOne({
           email
         });
+
+        // email do not exist
         if (!user)
           return res.status(400).json({
             message: "User Not Exist"
           });
-  
+
+        // is a user, compare the hashed password
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch)
           return res.status(400).json({
@@ -151,9 +155,9 @@ router.post(
 //get login user with token
 router.get("/me", auth, async (req, res) => {
     try {
-      // request.user is getting fetched from Middleware after token authentication
+      // request user is getting fetched from Middleware after token authentication
       const user = await User.findById(req.user.id);
-      res.json(user);
+      res.send(user);
     } catch (e) {
       res.send({ message: "Error in Fetching user" });
     }
@@ -162,8 +166,9 @@ router.get("/me", auth, async (req, res) => {
 //delete user
 router.delete('/:id', async (req,res) =>{
     try{
-        //pass in id selected, find it in mongo and remove it, pass that post back
+        //pass in id selected, and delete that user
         User.findByIdAndRemove({_id: req.params.id}).then(function(user){
+            // send delted user
             res.send(user)
         })
     } catch(err){

@@ -11,6 +11,10 @@ const app = express()
 //connect to DB with mongoose
 mongoose.connect('mongodb+srv://user:12345@cis4339-watty.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true, useUnifiedTopology: true
+}).then(() => {
+    console.log("Datebase connected!")
+}).catch(err => {
+    console.log("Cannot connect to database!")
 })
 
 //middleware
