@@ -17,7 +17,7 @@
 
             <!-- this is a single post which loops through the Post api and displays all of them -->
             <div class="post d-flex flex-row" v-for="(singlepost, i) in Post" :key="i">
-                <!-- like buttons -->
+                <!-- div with like buttons -->
                 <div class="like d-flex flex-column justify-content-center">
                     <!-- Like button -->
                     <button  type="button" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="top" title="Like this post!">
