@@ -1,3 +1,4 @@
+// imports the vue pages
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/views/Login'
@@ -12,10 +13,11 @@ import FAQs from '@/views/FAQs'
 
 Vue.use(Router)
 
+// creates routes for each of the vue pages and export it
 export default new Router({
   routes: [
     {
-      path: '/login',
+      path: '/',
       name: 'Login',
       component: Login
     },
@@ -25,7 +27,7 @@ export default new Router({
       component: Signup
     },
     {
-      path: '/',
+      path: '/home',
       name: 'Home',
       component: Home
     },

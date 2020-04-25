@@ -15,17 +15,17 @@
                         <form action="" autocomplete="off">
                             <!-- Email -->
                             <div class="form-group">
-                                <input type="text" class="form-control" name="email" placeholder="Email...">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email..." v-model="email">
                             </div>
                             <!-- Password -->
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Password...">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password..." v-model="password">
                             </div>
                             <!-- Login button -->
-                            <button type="button" id="sendlogin" class="btn btn-outline-dark">login</button>
+                            <button type="button" id="sendlogin" class="btn btn-outline-dark">Login</button>
                         </form>
                         <!-- Go to signup page -->
-                        <router-link to="Signup">Sign-up Now</router-link>
+                        <router-link to="Signup">Sign-up Here</router-link>
                     </div>
                 </div>
             </div>
@@ -34,9 +34,14 @@
         
 </template>
 
-<script>
+<script>    
 export default {
-    
+    data(){
+        return{
+            email: '',
+            password: '',
+        }
+    }
 }
 </script>
 
