@@ -134,11 +134,13 @@ router.post(
           payload,
           "secret",
           {
-            expiresIn: 3600
+            expiresIn: 604800
           },
           (err, token) => {
             if (err) throw err;
             res.status(200).json({
+              success: true,
+              user: user,
               token
             });
           }

@@ -12,7 +12,7 @@
                 <!-- Card with login form -->
                 <div class="card">
                     <div class="card-body text-center">
-                        <form action="" autocomplete="off">
+                        <form action="" autocomplete="off" @click.prevent="loginUser">
                             <!-- Email -->
                             <div class="form-group">
                                 <input type="text" class="form-control" id="email" name="email" placeholder="Email..." v-model="email">
@@ -35,12 +35,16 @@
 </template>
 
 <script>    
+
 export default {
     data(){
         return{
             email: '',
-            password: '',
+            password: ''
         }
+    },
+    methods: {
+       
     }
 }
 </script>
