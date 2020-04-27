@@ -67,18 +67,18 @@ export default {
     methods: {
         ...mapActions(["register"]),
         registerUser() {
-        let user = {
-            username: this.username,
-            password: this.password,
-            confirm_password: this.confirm_password,
-            email: this.email,
-            name: this.name
-        };
-        this.register(user).then(res => {
-            if (res.data.success) {
-            this.$router.push("login");
-            }
-        });
+            let user = {
+                username: this.username,
+                password: this.password,
+                confirm_password: this.confirm_password,
+                email: this.email,
+                name: this.name
+            };
+            this.register(user).then(res => {
+                if (res.data.success) {
+                    this.$router.push("login");
+                }
+            });
         }
     }
     

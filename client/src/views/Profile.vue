@@ -41,7 +41,7 @@
                             <div class="card-body">
                                 <h3 class="card-title">{{singlepost.title}}</h3>
                                 <!-- need to fix date formatting -->
-                                <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(singlepost.datePosted).fromNow()}} by {{singlepost.user}}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(singlepost.datePosted).fromNow()}} by {{singlepost.userPosted}}</h6>
                                 <span class="badge badge-primary">{{singlepost.class}}</span> <span class="badge badge-success">{{singlepost.professor}}</span>
                                 <p class="card-text">{{singlepost.post}}</p>
                                 <!-- add number of comments and like button -->
@@ -65,7 +65,9 @@ import { mapActions, mapGetters } from "vuex"
 const url = "http://localhost:3000/posts"
 
 export default {
-    computed: mapGetters(["user"]),
+    computed: {
+        ...mapGetters(["user"])
+    },
     components: {
       Navbar
     },

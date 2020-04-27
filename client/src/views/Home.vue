@@ -37,7 +37,7 @@
                     <div class="card-body">
                         <h3 class="card-title">{{post.title}}</h3>
                         <!-- need to fix date formatting -->
-                        <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(post.datePosted).fromNow()}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(post.datePosted).fromNow()}} by {{post.userPosted}}</h6>
                         <span class="badge badge-primary">{{post.class}}</span> <span class="badge badge-success">{{post.professor}}</span>
                         <p class="card-text">{{post.post}}</p>
                         <!-- add number of comments and like button -->

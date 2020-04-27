@@ -5,7 +5,7 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    user: {
+    userPosted: {
         type: String,
     },
     datePosted: {
@@ -13,14 +13,12 @@ const postSchema = new mongoose.Schema({
         required: true,
         default: Date.now()
     },
-    class: {
+    course: {
         type: String,
-        required: false,
         default: ''
     },
     professor: {
         type: String,
-        required: false,
         default: ''
     },
     post: {
@@ -42,7 +40,6 @@ const postSchema = new mongoose.Schema({
         }],
     likes: {
         type: Number,
-        required: false,
         default: 0
     }
 })
