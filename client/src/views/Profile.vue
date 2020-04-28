@@ -16,26 +16,16 @@
                         </ul>
                     </div>
                 </div>
+
+
             
                 <!-- user post -->
                 <div class="user-posts p-2 w-100 bd-highlight">
+                    <!-- Heading -->
+                    <h4 class="page-heading">MY POST</h4>
+                    <hr>
                     <!-- this is a single post which loops through the Post api and displays all of them -->
-                    <div class="post d-flex flex-row" v-for="(singlepost, i) in Post" :key="i">
-                        <!-- div with like buttons -->
-                        <div class="like d-flex flex-column justify-content-center">
-                            <!-- Like button -->
-                            <button  type="button" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="top" title="Like this post!">
-                                <svg class="bi bi-chevron-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"/>
-                                </svg>
-                            </button>
-                            <!-- Dislike button -->
-                            <button  type="button" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="bottom" title="Dislike this post!">
-                                <svg class="bi bi-chevron-down" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"/>
-                                </svg>
-                            </button>
-                        </div>
+                    <div class="post d-flex flex-row" v-for="(singlepost, i) in filterPost" :key="i">
                         <!-- card -->
                         <div class="card posts-card" >
                             <div class="card-body">
@@ -62,34 +52,27 @@ import moment from 'moment'
 import Navbar from '../components/Navbar.vue'
 import { mapActions, mapGetters } from "vuex"
 
-const url = "http://localhost:3000/posts"
-
 export default {
     computed: {
-        ...mapGetters(["user"])
+        ...mapGetters(['post']),
+        ...mapGetters(['user']),
+        filterPost(){
+            return this.post.filter( posts => {
+                return posts.userPosted == this.user.username;
+            })            
+        }
     },
     components: {
       Navbar
     },
-    data() {
-        return{
-            Post: [],
-            date: ''
-        }
-    },
     methods: {
         moment,
-        ...mapActions(["getProfile"])
+        ...mapActions(['getPost']),
+        ...mapActions(['getProfile'])
     },
     async created() {
+        this.getPost();
         this.getProfile();
-        try{
-            const res = await axios.get(url)
-
-            this.Post = res.data;
-        } catch(err){
-            console.log(err)
-        }
     }
 };
 </script>
@@ -102,11 +85,11 @@ a:hover{
     color: #4b4b4b;
 }
 .container{
-    padding-top: 2vh; 
+    padding-top: 2vh;
 }
 .profile-info{
-    padding-top: 4vh;
-    padding-right: 2vw;
+    padding-top: 10vh;
+    padding-right: 3vw;
     width: 25vw;
 }
 .post{

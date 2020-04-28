@@ -16,7 +16,7 @@
             <hr>
 
             <!-- this is a single post which loops through the Post api and displays all of them -->
-            <div class="post d-flex flex-row" v-for="(post, i) in Posts" :key="i">
+            <div class="post d-flex flex-row" v-for="(p, i) in post" :key="i">
                 <!-- div with like buttons -->
                 <div class="like d-flex flex-column justify-content-center">
                     <!-- Like button -->
@@ -35,14 +35,14 @@
                 <!-- card -->
                 <div class="card" >
                     <div class="card-body">
-                        <h3 class="card-title">{{post.title}}</h3>
+                        <h3 class="card-title">{{p.title}}</h3>
                         <!-- need to fix date formatting -->
-                        <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(post.datePosted).fromNow()}} by {{post.userPosted}}</h6>
-                        <span class="badge badge-primary">{{post.class}}</span> <span class="badge badge-success">{{post.professor}}</span>
-                        <p class="card-text">{{post.post}}</p>
+                        <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(p.datePosted).fromNow()}} by {{p.userPosted}}</h6>
+                        <span class="badge badge-primary">{{p.class}}</span> <span class="badge badge-success">{{p.professor}}</span>
+                        <p class="card-text">{{p.post}}</p>
                         <!-- add number of comments and like button -->
                         <router-link to="SinglePost" class="card-link stretched-link"># comments</router-link>
-                        <a href="#" class="notlink">{{post.likes}} likes</a>
+                        <a href="#" class="notlink">{{p.likes}} likes</a>
                     </div>
                 </div>
             </div>
@@ -56,36 +56,25 @@ import moment from 'moment'
 import Navbar from '../components/Navbar.vue'
 import { mapGetters, mapActions } from 'vuex';
 
-const url = "http://localhost:3000/posts"
 
 export default {
     components: {
         Navbar
     },
-    data() {
-        return{
-            Posts: [],
-            date: ''
-        }
-    },
     computed: {
-        ...mapGetters(["isLoggedIn"])
+        ...mapGetters(['post']),
+        ...mapGetters(['isLoggedIn'])
     },
     methods: {
         moment,
-        ...mapActions(["logout"]),
+        ...mapActions(['getPost']),
+        ...mapActions(['logout']),
         logoutUser() {
         this.logout();
     }
     },
     async created() {
-        try{
-            const res = await axios.get(url)
-
-            this.Posts = res.data;
-        } catch(err){
-            console.log(err)
-        }
+        this.getPost();
     }
 }
 </script>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const state = {
-    post: {},
+    post: [],
     status: '',
     error: null
 };
@@ -11,20 +11,15 @@ export const getters = {
 };
 
 export const actions = {
-    // get posts
-    async getPost({
-        commit
-    }) {
-        commit('getpost_request');
-        let res = await axios.get('http://localhost:3000/posts')
-        commit('getpost', res.data.post)
-        return res;
+    // get all post
+    async getPost({ commit }) {
+        const res = await axios.get('http://localhost:3000/posts');
+
+        commit('setPost', res.data)
     },
 
     // create posts
-    async createPost({
-        commit
-    }, postData) {
+    async createPost({ commit }, postData) {
         try {
             commit('newpost_request');
             let res = await axios.post('http://localhost:3000/posts', postData);
@@ -40,13 +35,7 @@ export const actions = {
 };
 
 export const mutations = {
-    // get post
-    getpost_request(state) {
-        state.status = 'loading'
-    },
-    getpost(state, post){
-        state.post = post
-    },
+    setPost: (state, post) => (state.post = post),
 
     // create post
     newpost_request(state) {
