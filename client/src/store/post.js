@@ -2,12 +2,14 @@ import axios from 'axios';
 
 const state = {
     post: [],
+    onepost: [],
     status: '',
     error: null
 };
 
 export const getters = {
-    post: state => state.post
+    post: state => state.post,
+    onepost: state => state.onepost
 };
 
 export const actions = {
@@ -16,6 +18,14 @@ export const actions = {
         const res = await axios.get('http://localhost:3000/posts');
 
         commit('setPost', res.data)
+    },
+
+    // get single post
+    async getOnePost({ commit }) {
+        const res = await axios.get('http://localhost:3000/posts/:id');
+
+        commit('setOnePost', res.data)
+        console.log(res)
     },
 
     // create posts
@@ -36,6 +46,8 @@ export const actions = {
 
 export const mutations = {
     setPost: (state, post) => (state.post = post),
+
+    setOnePost: (state, onepost) => (state.onepost = onepost),
 
     // create post
     newpost_request(state) {

@@ -6,16 +6,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
-                        <router-link class="nav-link nav-item-effects" to="Home">Home</router-link>
+                        <router-link class="nav-link nav-item-effects" to="/">Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link nav-item-effects" to="Events">Events</router-link>
+                        <router-link class="nav-link nav-item-effects" to="/events">Events</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link nav-item-effects" to="Classes">Classes</router-link>
+                        <router-link class="nav-link nav-item-effects" to="/classes">Classes</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link nav-item-effects" to="FAQs">FAQ</router-link>
+                        <router-link class="nav-link nav-item-effects" to="/faqs">FAQ</router-link>
                     </li>
                 </ul>
             </div>
@@ -25,13 +25,13 @@
             <div>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item" v-if="!isLoggedIn">
-                        <router-link class="nav-link nav-item-effects" to="Login">Login</router-link>
+                        <router-link class="nav-link nav-item-effects" to="/login">Login</router-link>
                     </li>
                     <li class="nav-item" v-if="!isLoggedIn">
-                        <router-link class="nav-link nav-item-effects" to="Signup">Sign Up</router-link>
+                        <router-link class="nav-link nav-item-effects" to="/signup">Sign Up</router-link>
                     </li>
                     <li class="nav-item" v-if="isLoggedIn">
-                        <router-link class="nav-link nav-item-effects" to="Profile">Profile</router-link>
+                        <router-link class="nav-link nav-item-effects" to="/profile">Profile</router-link>
                     </li>
                     <li class="nav-item" v-if="isLoggedIn">
                         <a class="nav-link nav-item-effects" to="/logout" @click.prevent="logoutUser">Logout</a>

@@ -41,7 +41,7 @@
                         <span class="badge badge-primary">{{p.class}}</span> <span class="badge badge-success">{{p.professor}}</span>
                         <p class="card-text">{{p.post}}</p>
                         <!-- add number of comments and like button -->
-                        <router-link to="SinglePost" class="card-link stretched-link"># comments</router-link>
+                        <router-link v-bind:to="'/post/' + p._id" class="card-link stretched-link"># comments</router-link>
                         <a href="#" class="notlink">{{p.likes}} likes</a>
                     </div>
                 </div>
@@ -67,11 +67,7 @@ export default {
     },
     methods: {
         moment,
-        ...mapActions(['getPost']),
-        ...mapActions(['logout']),
-        logoutUser() {
-        this.logout();
-    }
+        ...mapActions(['getPost'])
     },
     async created() {
         this.getPost();

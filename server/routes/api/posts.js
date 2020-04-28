@@ -14,6 +14,16 @@ router.get('/', async (req,res) => {
     }
 });
 
+// get post by id
+router.get('/:id', async (req,res) => {
+    try{
+        const posts = await Post.findOne({_id: req.params.id})
+        res.send(posts)
+    } catch(err){
+        res.send(err)
+    }
+});
+
 //Add posts
 router.post('/', async (req,res) => {
     try{

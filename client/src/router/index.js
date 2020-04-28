@@ -39,7 +39,7 @@ const router = new Router({
       component: NewPost
     },
     {
-      path: '/singlepost',
+      path: '/post/:id',
       name: 'SinglePost',
       component: SinglePost
     },
