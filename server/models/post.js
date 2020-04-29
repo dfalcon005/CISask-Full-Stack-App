@@ -27,7 +27,7 @@ const postSchema = new mongoose.Schema({
     },
     comments:
         [{
-            user: {
+            commentedBy: {
                 type: String
             },
             commentdate:{

@@ -33,7 +33,7 @@
                     <!-- single comment -->
                     <div class="single-comment" v-for="(comment, i) in post.comments" :key="i">
                         <!-- comment information -->
-                        <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(comment.commentdate).fromNow()}} by {{comment.user}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(comment.commentdate).fromNow()}} by {{comment.commentedBy}}</h6>
                         <!-- comment content -->
                         <p class="card-text comment-content">{{comment.usercomment}}</p>
                         <hr>
