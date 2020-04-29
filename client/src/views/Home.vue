@@ -21,13 +21,13 @@
                 <div class="like d-flex flex-column justify-content-center">
                     <form action="">
                         <!-- Like button -->
-                        <button  type="button" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="top" title="Like this post!">
+                        <button @click="likePost" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="top" title="Like this post!">
                             <svg class="bi bi-chevron-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"/>
                             </svg>
                         </button>
                         <!-- Dislike button -->
-                        <button  type="button" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="bottom" title="Dislike this post!">
+                        <button  @click="dislikePost" type="submit" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="bottom" title="Dislike this post!">
                             <svg class="bi bi-chevron-down" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"/>
                             </svg>
@@ -68,13 +68,41 @@ export default {
     components: {
         Navbar
     },
+    data() {
+        return{
+            likes: 0,
+            id: '',
+        }
+    },
     computed: {
         ...mapGetters(['post']),
         ...mapGetters(['isLoggedIn'])
     },
     methods: {
         moment,
-        ...mapActions(['getPost'])
+        ...mapActions(['getPost']),
+        // figure this out
+        async likePost() {
+            this.p.likes.push({
+                likes: this.p.likes + 1,
+                id: this.p.id
+            });
+            return this.$http.put('http://localhost:3000/posts/' + this.id)
+            .then(res => {
+                console.log(this.likes)
+            })
+        },
+        // figure this out
+        async dislikePost() {
+            this.post.likes.push({
+                likes: this.post.likes - 1// Our temporary value
+            });
+            return this.$http.put('http://localhost:3000/posts/' + this.id, this.post)
+            .then(res => {
+                console.log(res)
+            })
+        },
+
     },
     async created() {
         this.getPost();
