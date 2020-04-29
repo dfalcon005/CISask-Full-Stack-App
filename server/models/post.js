@@ -27,9 +27,6 @@ const postSchema = new mongoose.Schema({
     },
     comments:
         [{
-            commentedBy: {
-                type: String
-            },
             commentdate:{
                 type: Date,
                 default: Date.now()

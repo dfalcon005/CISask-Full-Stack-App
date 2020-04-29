@@ -14,26 +14,28 @@
                     <!-- <a to="SinglePost" class="card-link"> # comments </a> -->
                     <a href="#" class="notlink">{{post.likes}} likes</a>
                     <hr>
+
                     <!-- input and button to post a comment -->
-                    <form action="" v-if="isLoggedIn">
+                    <form action="" v-if="isLoggedIn" v-on:submit.prevent="submitComment">
                         <div class="d-flex bd-highlight">
                             <!-- comment input field -->
                             <div class="p-2 flex-grow-1 bd-highlight">
-                                <input type="text" name="comment" class="form-control" placeholder="Comment here...">
+                                <input name='currentComment' v-model='currentComment' type="text" class="form-control" placeholder="Comment here...">
                             </div>
                             <!-- submit button -->
                             <div class="p-2 bd-highlight">
-                                <button class="btn btn-outline-dark">done</button>
+                                <button type="submit" class="btn btn-outline-dark">done</button>
                             </div>
                         </div>
                     </form>
                     <hr v-if="isLoggedIn">
+
                     <!-- Comment section -->
                     <h4 class="card-title">Comments</h4>
                     <!-- single comment -->
                     <div class="single-comment" v-for="(comment, i) in post.comments" :key="i">
                         <!-- comment information -->
-                        <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(comment.commentdate).fromNow()}} by {{comment.commentedBy}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(comment.commentdate).fromNow()}}</h6>
                         <!-- comment content -->
                         <p class="card-text comment-content">{{comment.usercomment}}</p>
                         <hr>
@@ -54,17 +56,27 @@ export default {
     components: {
         Navbar
     },
-    methods: {
-        moment
-    },
-    computed: {
-        ...mapGetters(['isLoggedIn'])
-    },
     data() {
         return {
             id: this.$route.params.id,
-            post: []
+            post: [],
+            currentComment: '',
         }
+    },
+    methods: {
+        moment,
+        async submitComment() {
+            this.post.comments.push({
+                usercomment: this.currentComment // Our temporary value
+            });
+            return this.$http.put('http://localhost:3000/posts/' + this.id, this.post)
+            .then(res => {
+                console.log(res)
+            })
+        }
+    },
+    computed: {
+        ...mapGetters(['isLoggedIn'])
     },
     async created() {
         return this.$http.get('http://localhost:3000/posts/' + this.id)

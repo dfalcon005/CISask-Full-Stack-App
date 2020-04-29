@@ -3,12 +3,12 @@
         <navbar/>
         <div class="container">
             <h1 class="page-heading">CIS Classes</h1>
-            <p>These are classes for the Fall 2020 term</p>
+            <p>Professors listed are for the Fall 2020 term</p>
             <div class="questions" v-for="(course, index) in classes" :key="index">
                 <hr>
-                <h4>{{course.name}}: {{course.coursenumber}}</h4>
+                <h4>CIS {{course.coursenumber}}: {{course.name}}</h4>
                 <p>{{course.description}}</p>
-                <h6>Professors</h6>
+                <h6 class="professors">Professors:</h6>
                 <ul>
                     <div v-for="(prof, index) in course.professor" :key="index">
                         <li>{{prof.firstname}} {{prof.lastname}}</li>
@@ -52,5 +52,8 @@ export default {
 }
 .page-heading{
     padding-bottom: 1vh;
+}
+.professors{
+    text-decoration: underline;
 }
 </style>

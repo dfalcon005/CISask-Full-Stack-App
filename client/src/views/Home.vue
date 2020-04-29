@@ -19,30 +19,37 @@
             <div class="post d-flex flex-row" v-for="(p, i) in post" :key="i">
                 <!-- div with like buttons -->
                 <div class="like d-flex flex-column justify-content-center">
-                    <!-- Like button -->
-                    <button  type="button" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="top" title="Like this post!">
-                        <svg class="bi bi-chevron-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"/>
-                        </svg>
-                    </button>
-                    <!-- Dislike button -->
-                    <button  type="button" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="bottom" title="Dislike this post!">
-                        <svg class="bi bi-chevron-down" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"/>
-                        </svg>
-                    </button>
+                    <form action="">
+                        <!-- Like button -->
+                        <button  type="button" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="top" title="Like this post!">
+                            <svg class="bi bi-chevron-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                        <!-- Dislike button -->
+                        <button  type="button" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="bottom" title="Dislike this post!">
+                            <svg class="bi bi-chevron-down" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                    </form>
                 </div>
+
                 <!-- card -->
                 <div class="card" >
                     <div class="card-body">
+                        <!-- title of post -->
                         <h3 class="card-title">{{p.title}}</h3>
-                        <!-- need to fix date formatting -->
+                        <!-- date posted and user posted by -->
                         <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(p.datePosted).fromNow()}} by {{p.userPosted}}</h6>
+                        <!-- class and professor tags -->
                         <span class="badge badge-primary">{{p.class}}</span> <span class="badge badge-success">{{p.professor}}</span>
+                        <!-- main post content -->
                         <p class="card-text">{{p.post}}</p>
-                        <!-- add number of comments and like button -->
-                        <router-link v-bind:to="'/post/' + p._id" class="card-link stretched-link"># comments</router-link>
+                        <!-- number of comments and likes -->
                         <a href="#" class="notlink">{{p.likes}} likes</a>
+                        <router-link v-bind:to="'/post/' + p._id" class="card-link stretched-link"></router-link>
+                        
                     </div>
                 </div>
             </div>
