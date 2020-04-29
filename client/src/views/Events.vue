@@ -5,8 +5,8 @@
             <h1 class="page-heading">Events happening in the College of Technology</h1>
             <div class="questions" v-for="(event, index) in events" :key="index">
                 <hr>
-                <h2 class="page-heading">{{event.eventname}}</h2>
-                <h4 class="page-heading">{{moment(event.eventdate).format('MMMM Do, YYYY')}}</h4>
+                <h3 class="page-heading">{{event.eventname}}</h3>
+                <h5 class="page-heading">{{moment(event.eventdate).format('MMMM Do, YYYY')}}</h5>
                 <h6 class="page-heading">{{event.description}}</h6>
                 <p>{{event.additional}}</p>
             </div>

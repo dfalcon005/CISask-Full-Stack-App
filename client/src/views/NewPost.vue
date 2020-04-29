@@ -19,35 +19,43 @@
                     <label for="">Class</label>
                     <select name='course' v-model='course' class="form-control">
                         <option disabled>Choose Class</option>
-                        <option>4375</option>
-                        <option>4339</option>
-                        <option>4338</option>
-                        <option>3368</option>
-                        <option>3367</option>
-                        <option>3365</option>
-                        <option>3355</option>
-                        <option>3347</option>
+                        <option>2332</option>
+                        <option>2334</option>
+                        <option>2336</option>
+                        <option>2337</option>
+                        <option>2348</option>
                         <option>3343</option>
-                        <option>3320</option>
+                        <option>3347</option>
+                        <option>3355</option>
+                        <option>3365</option>
+                        <option>3368</option>
+                        <option>4338</option>
+                        <option>4339</option>
+                        <option>4375</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="">Professor</label>
                     <select name='professor' v-model='professor' class="form-control">
                         <option disabled>Choose Professor</option>
-                        <option>Gibbs</option>
-                        <option>Fardosht</option>
-                        <option>Miertschin</option>
-                        <option>Velusamy</option>
-                        <option>Otto</option>
-                        <option>Sadeghi</option>
-                        <option>Wu</option>
-                        <option>Detillier</option>
-                        <option>Zhang</option>
-                        <option>Viseh</option>
-                        <option>Martinez</option>
-                        <option>Brown</option>
-                        <option>Lendasse</option>
+                        <option>Abdi Sadeghi</option>
+                        <option>Brandon GreenField</option>
+                        <option>Bret Detillier</option>
+                        <option>Chris Bronk</option>
+                        <option>Fardosht Amirpanahi</option>
+                        <option>Gandhimathi Velusamy</option>
+                        <option>Houghton Brown</option>
+                        <option>Jose Martinez</option>
+                        <option>Kyhia Bostic</option>
+                        <option>Mehran Viseh</option>
+                        <option>Negin Tabrizi</option>
+                        <option>Otto Dobretsberger</option>
+                        <option>Peter Weber</option>
+                        <option>Sajida Faiyaz</option>
+                        <option>Susan Miertschin</option>
+                        <option>Thomas Gibbs</option>
+                        <option>Xuqing Wu</option>
+                        <option>Yunpeng Zhang</option>
                     </select>
                 </div>
                 <div class="form-group">

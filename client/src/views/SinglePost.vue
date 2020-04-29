@@ -72,6 +72,8 @@ export default {
             return this.$http.put('http://localhost:3000/posts/' + this.id, this.post)
             .then(res => {
                 console.log(res)
+                // clear text field after submit
+                this.currentComment = ''
             })
         }
     },
