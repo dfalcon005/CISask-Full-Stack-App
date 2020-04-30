@@ -15,7 +15,7 @@
                         <router-link class="nav-link nav-item-effects" to="/classes">Classes</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link nav-item-effects" to="/faqs">FAQ</router-link>
+                        <router-link class="nav-link nav-item-effects" to="/faqs">FAQ/Help</router-link>
                     </li>
                 </ul>
             </div>

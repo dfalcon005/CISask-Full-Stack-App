@@ -53,7 +53,7 @@
                                     <span id="user-posted">{{p.userPosted}}</span>
                                 </h6>
                                 <!-- class and professor tags -->
-                                <span class="badge badge-primary">{{p.class}}</span> <span class="badge badge-success">{{p.professor}}</span>
+                                <span class="badge badge-primary">{{p.course}}</span> <span class="badge badge-success">{{p.professor}}</span>
                                 <!-- post content -->
                                 <p class="card-text">{{p.post}}</p>
                                 

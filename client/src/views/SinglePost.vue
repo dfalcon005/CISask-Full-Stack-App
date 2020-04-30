@@ -8,11 +8,11 @@
                     <h3 class="card-title">{{post.title}}</h3>
                     <!-- need to fix date formatting -->
                     <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(post.datePosted).fromNow()}} by {{post.userPosted}}</h6>
-                    <span class="badge badge-primary">{{post.class}}</span> <span class="badge badge-success">{{post.professor}}</span>
+                    <span class="badge badge-primary">{{post.course}}</span> <span class="badge badge-success">{{post.professor}}</span>
                     <p class="card-text">{{post.post}}</p>
-                    <!-- add number of comments and like button -->
-                    <!-- <a to="SinglePost" class="card-link"> # comments </a> -->
-                    <a href="#" class="notlink">{{post.likes}} likes</a>
+                    <p v-if="post.comments.length == 0">No comments</p>
+                    <p v-if="post.comments.length == 1">{{post.comments.length}} comment</p>
+                    <p v-if="post.comments.length > 1">{{post.comments.length}} comments</p>
                     <hr>
 
                     <!-- input and button to post a comment -->
@@ -24,7 +24,7 @@
                             </div>
                             <!-- submit button -->
                             <div class="p-2 bd-highlight">
-                                <button type="submit" class="btn btn-outline-dark">done</button>
+                                <button type="submit" class="btn btn-outline-dark">Done</button>
                             </div>
                         </div>
                     </form>

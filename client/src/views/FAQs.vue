@@ -2,13 +2,14 @@
     <div>
         <navbar/>
         <div class="container">
-            <h1 class="page-heading">FAQs</h1>
+            <h1 class="page-heading">FAQs/Help</h1>
             <div class="questions" v-for="(question, index) in faqs" :key="index">
                 <hr>
                 <h3>{{question.question}}</h3>
                 <p>{{question.answer}}</p>
             </div>
             <hr>
+            <a href="">For more help, please refer to the user guide.</a>
         </div>
     </div>
 </template>
@@ -42,6 +43,7 @@ export default {
 <style scoped>
 .container{
     padding-top: 2vh;
+    padding-bottom: 2vh;
 }
 .page-heading{
     padding-bottom: 1vh;

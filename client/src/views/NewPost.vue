@@ -5,11 +5,11 @@
             <form v-on:submit.prevent="newPost">
                 <div class="form-group">
                     <label for="">Title</label>
-                    <input type="text" class="form-control" name="title" v-model="title" placeholder="Title here...">
+                    <input type="text" class="form-control" name="title" v-model="title" placeholder="Title here..." required>
                 </div>
                 <div class="form-group" v-if="user">
                     <label for="">User</label>
-                    <select name='userPosted' v-model='userPosted' class="form-control">
+                    <select name='userPosted' v-model='userPosted' class="form-control" required>
                         <option disabled>Choose user</option>
                         <option> Anonymous </option>
                         <option> {{user.username}} </option>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Post</label>
-                    <textarea class="form-control" rows="5" name="post" v-model="post" placeholder="Post here..."/>
+                    <textarea class="form-control" rows="5" name="post" v-model="post" placeholder="Post here..." required/>
                 </div>
                 <div class="d-flex flex-row justify-content-end">
                     <button type="submit" class="btn btn-outline-dark">Submit</button>
@@ -87,6 +87,7 @@ export default {
         return{
             title: '',
             userPosted: '',
+            datePosted: '',
             course: '',
             professor: '',
             post: ''
@@ -99,6 +100,7 @@ export default {
             let newpost = {
                 title: this.title,
                 userPosted: this.userPosted,
+                datePosted: Date.now(),
                 course: this.course,
                 professor: this.professor,
                 post: this.post
