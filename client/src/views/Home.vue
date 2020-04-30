@@ -41,9 +41,12 @@
                         <!-- title of post -->
                         <h3 class="card-title">{{p.title}}</h3>
                         <!-- date posted and user posted by -->
-                        <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(p.datePosted).fromNow()}} by {{p.userPosted}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Posted 
+                            <span id="date-posted">{{moment(p.datePosted).fromNow()}}</span> by 
+                            <span id="user-posted">{{p.userPosted}}</span>
+                        </h6>
                         <!-- class and professor tags -->
-                        <span class="badge badge-primary">{{p.class}}</span> <span class="badge badge-success">{{p.professor}}</span>
+                        <span class="badge badge-primary">{{p.course}}</span> <span class="badge badge-success">{{p.professor}}</span>
                         <!-- main post content -->
                         <p class="card-text">{{p.post}}</p>
                         <!-- number of comments and likes -->
@@ -153,5 +156,11 @@ a:hover{
     color: black;
     padding-right: 1rem;
 }
-
+#date-posted{
+    font-weight: bold;
+}
+#user-posted{
+    font-weight: bold;
+    font-style: italic;
+}
 </style>
