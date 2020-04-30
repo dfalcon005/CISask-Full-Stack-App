@@ -30,7 +30,7 @@
                     <h4 class="page-heading">MY POST</h4>
                     <hr>        
                     <!-- this is a single post which loops through the Post api and displays all of them -->
-                    <div class="post d-flex flex-row" v-for="(singlepost, i) in filterPost" :key="i">
+                    <div class="post d-flex flex-row" v-for="(singlepost, i) in sortPost" :key="i">
 
                         <!-- delete option -->
                         <div class="d-flex flex-column justify-content-center">
@@ -82,6 +82,11 @@ export default {
         filterPost(){
             return this.post.filter( posts => {
                 return posts.userPosted == this.user.username;
+            })            
+        },
+        sortPost(){
+            return this.filterPost.sort((a,b) => {
+                return a.datePosted < b.datePosted ? 1: -1
             })            
         }
     },

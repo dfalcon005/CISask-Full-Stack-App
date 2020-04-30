@@ -16,7 +16,7 @@
             <hr>
 
             <!-- this is a single post which loops through the Post api and displays all of them -->
-            <div class="post d-flex flex-row" v-for="(p, i) in post" :key="i">
+            <div class="post d-flex flex-row" v-for="(p, i) in sortPost" :key="i">
                 <!-- div with like buttons -->
                 <div class="like d-flex flex-column justify-content-center">
                     <form action="">
@@ -72,11 +72,17 @@ export default {
         return{
             likes: 0,
             id: '',
+            sortDirection: 'asc'
         }
     },
     computed: {
         ...mapGetters(['post']),
-        ...mapGetters(['isLoggedIn'])
+        ...mapGetters(['isLoggedIn']),
+        sortPost(){
+            return this.post.sort((a,b) => {
+                return a.datePosted < b.datePosted ? 1: -1
+            })            
+        }
     },
     methods: {
         moment,
