@@ -8,16 +8,16 @@
                     <h4 class="page-heading">MY PROFILE</h4>
                     <hr>
                     <div class="card" v-if="user">
-                    <div class="card-header">
+                    <div class="card-header" id="info-header">
                         Profile Information
                     </div>
                         <ul class="list-group list-group-flush">
                             <!-- users name -->
-                            <li class="list-group-item">Name: {{user.name}}</li>
+                            <li class="list-group-item"> <span id="info-header">Name:</span> {{user.name}}</li>
                             <!-- users username -->
-                            <li class="list-group-item">Username: {{user.username}}</li>
+                            <li class="list-group-item"> <span id="info-header">Username:</span> {{user.username}}</li>
                             <!-- users email -->
-                            <li class="list-group-item">Email: {{user.email}}</li>
+                            <li class="list-group-item"><span id="info-header">Email:</span> {{user.email}}</li>
                         </ul>
                     </div>
                 </div>
@@ -56,10 +56,14 @@
                                 <span class="badge badge-primary">{{p.class}}</span> <span class="badge badge-success">{{p.professor}}</span>
                                 <!-- post content -->
                                 <p class="card-text">{{p.post}}</p>
-                                <!-- shows likes -->
-                                <a class="notlink">{{p.likes}} likes</a>
-                                <!-- opens singlepost vue -->
-                                <router-link v-bind:to="'/post/' + p._id" class="card-link stretched-link"></router-link>
+                                
+                                <!-- Route to single page view / conditional formatting for number of comments -->
+                                <!-- no comments -->
+                                <router-link v-bind:to="'/post/' + p._id"  v-if="p.comments.length == 0" class="card-link stretched-link"> No commments </router-link>
+                                <!-- 1 comment -->
+                                <router-link v-bind:to="'/post/' + p._id"  v-if="p.comments.length == 1" class="card-link stretched-link"> {{p.comments.length}} Comment </router-link>
+                                <!-- more than one comment -->
+                                <router-link v-bind:to="'/post/' + p._id"  v-if="p.comments.length > 1" class="card-link stretched-link"> {{p.comments.length}} Comments </router-link>
                             </div>
                         </div>
                     </div>
@@ -153,6 +157,9 @@ a:hover{
 .card-link{
     color: black;
     padding-right: 1rem;
+}
+#info-header{
+    font-weight: bold;
 }
 #date-posted{
     font-weight: bold;

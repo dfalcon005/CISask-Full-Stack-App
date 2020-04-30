@@ -17,23 +17,23 @@
 
             <!-- this is a single post which loops through the Post api and displays all of them -->
             <div class="post d-flex flex-row" v-for="(p, i) in sortPost" :key="i">
-                <!-- div with like buttons -->
-                <div class="like d-flex flex-column justify-content-center">
+                
+                <!-- <div class="like d-flex flex-column justify-content-center">
                     <form action="">
-                        <!-- Like button -->
+                        
                         <button @click="likePost" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="top" title="Like this post!">
                             <svg class="bi bi-chevron-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"/>
                             </svg>
                         </button>
-                        <!-- Dislike button -->
+                        
                         <button  @click="dislikePost" type="submit" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="bottom" title="Dislike this post!">
                             <svg class="bi bi-chevron-down" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"/>
                             </svg>
                         </button>
                     </form>
-                </div>
+                </div> -->
 
                 <!-- card -->
                 <div class="card" >
@@ -50,8 +50,15 @@
                         <!-- main post content -->
                         <p class="card-text">{{p.post}}</p>
                         <!-- number of comments and likes -->
-                        <a href="#" class="notlink">{{p.likes}} likes</a>
-                        <router-link v-bind:to="'/post/' + p._id" class="card-link stretched-link"></router-link>
+                        <!-- <a href="#" class="notlink">{{p.likes}} likes</a> -->
+
+                        <!-- Route to single page view / conditional formatting for number of comments -->
+                        <!-- no comments -->
+                        <router-link v-bind:to="'/post/' + p._id"  v-if="p.comments.length == 0" class="card-link stretched-link"> No commments </router-link>
+                        <!-- 1 comment -->
+                        <router-link v-bind:to="'/post/' + p._id"  v-if="p.comments.length == 1" class="card-link stretched-link"> {{p.comments.length}} Comment </router-link>
+                        <!-- more than one comment -->
+                        <router-link v-bind:to="'/post/' + p._id"  v-if="p.comments.length > 1" class="card-link stretched-link"> {{p.comments.length}} Comments </router-link>
                         
                     </div>
                 </div>
@@ -89,29 +96,7 @@ export default {
     },
     methods: {
         moment,
-        ...mapActions(['getPost']),
-        // figure this out
-        async likePost() {
-            this.p.likes.push({
-                likes: this.p.likes + 1,
-                id: this.p.id
-            });
-            return this.$http.put('http://localhost:3000/posts/' + this.id)
-            .then(res => {
-                console.log(this.likes)
-            })
-        },
-        // figure this out
-        async dislikePost() {
-            this.post.likes.push({
-                likes: this.post.likes - 1// Our temporary value
-            });
-            return this.$http.put('http://localhost:3000/posts/' + this.id, this.post)
-            .then(res => {
-                console.log(res)
-            })
-        },
-
+        ...mapActions(['getPost'])
     },
     async created() {
         this.getPost();
@@ -146,7 +131,6 @@ a:hover{
     border: none;
 }
 .card{
-    margin-left: 1vw;
     width: 100%;
 }
 .card-text{
