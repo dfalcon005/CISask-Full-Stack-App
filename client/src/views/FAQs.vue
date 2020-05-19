@@ -9,7 +9,7 @@
                 <p>{{question.answer}}</p>
             </div>
             <hr>
-            <a href="">For more help, please refer to the user guide.</a>
+            <!-- <a href="">For more help, please refer to the user guide.</a> -->
         </div>
     </div>
 </template>

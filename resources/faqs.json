@@ -1,0 +1,56 @@
+[
+    {
+        "_id": "5ea9ceee3ba80e4d9ce280c0",
+        "question": "Do I have to be a CIS student to use this site?",
+        "answer": "No, everyone is welcomed to use this site. Our admins do their best to monitor posts.",
+        "__v": 0
+    },
+    {
+        "_id": "5ea9ceee3ba80e4d9ce280bf",
+        "question": "What is this website?",
+        "answer": "cis.ask is a website geared toward CIS student that allows them to seek and give adivce to other CIS students.",
+        "__v": 0
+    },
+    {
+        "_id": "5ea9ceee3ba80e4d9ce280c1",
+        "question": "How do I sign up?",
+        "answer": "Click the sign up button in the top right hand corner, fill out the form, clicked finished, then login with your new account and you are all set!",
+        "__v": 0
+    },
+    {
+        "_id": "5ea9ceee3ba80e4d9ce280c3",
+        "question": "Can I delete my post?",
+        "answer": "You can delete your posts by going to the profile page and clicking the trashcan icon. Be careful though, once deleted it is gone forever",
+        "__v": 0
+    },
+    {
+        "_id": "5ea9ceee3ba80e4d9ce280c2",
+        "question": "How do I make a post?",
+        "answer": "You must be logged in to make a post. Once logged in, the button to make a post is located on the Home screen above the posts.",
+        "__v": 0
+    },
+    {
+        "_id": "5ea9ceee3ba80e4d9ce280c4",
+        "question": "How do I comment on a post?",
+        "answer": "To comment on a post, simply click on the post, type a comment in the where it says 'Comment here..' and click done! Make sure you are logged in thought, otherwise this will not be available to you.",
+        "__v": 0
+    },
+    {
+        "_id": "5ea9ceee3ba80e4d9ce280c6",
+        "question": "Who can see my post?",
+        "answer": "Everyone who visits this site will be able to see your post, but only other users will be able to respond.",
+        "__v": 0
+    },
+    {
+        "_id": "5ea9ceee3ba80e4d9ce280c5",
+        "question": "How does posting anonymously work?",
+        "answer": "Selecting anonymous when creating a post means your username will not show up on the post, but it also will not be shown on your profile page. This feature is used to make users feel safe in what they are saying without giving away their identity",
+        "__v": 0
+    },
+    {
+        "_id": "5ea9e80f56ff401cf03840d7",
+        "question": "Does the person know it was me that commented on their post?",
+        "answer": "No, your username is hidden because we want people to be able to be completely honest with their replied to people.",
+        "__v": 0
+    }
+]
