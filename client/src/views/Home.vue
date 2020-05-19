@@ -6,23 +6,24 @@
             <!-- header for posts with new post button -->
             <div class="d-flex flex-row justify-content-between">
                 <h4 class="page-heading">WHAT'S HAPPENING</h4>
-                
+                <div>
+                    <input type="text" class="form-control input-field" placeholder="Search post..." v-model="search"/>
+                </div>
             </div>
             <hr>
 
             <!-- this is a single post which loops through the Post api and displays all of them -->
-            <div class="post d-flex flex-row" v-for="(p, i) in sortPost" :key="i">
+            <div class="post d-flex flex-row" v-for="(p, i) in filteredPost" :key="i">
                 
                 <!-- <div class="like d-flex flex-column justify-content-center">
                     <form action="">
-                        
-                        <button @click="likePost" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="top" title="Like this post!">
+                        <button class="btn btn-light likebtn" data-toggle="tooltip" data-placement="top" title="Like this post!">
                             <svg class="bi bi-chevron-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"/>
                             </svg>
                         </button>
                         
-                        <button  @click="dislikePost" type="submit" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="bottom" title="Dislike this post!">
+                        <button  type="submit" class="btn btn-light likebtn" data-toggle="tooltip" data-placement="bottom" title="Dislike this post!">
                             <svg class="bi bi-chevron-down" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"/>
                             </svg>
@@ -31,7 +32,7 @@
                 </div> -->
 
                 <!-- card -->
-                <div class="card" >
+                <div class="card posts-card" >
                     <div class="card-body">
                         <!-- title of post -->
                         <h3 class="card-title">{{p.title}}</h3>
@@ -45,7 +46,7 @@
                         <!-- main post content -->
                         <p class="card-text">{{p.post}}</p>
                         <!-- number of comments and likes -->
-                        <!-- <a href="#" class="notlink">{{p.likes}} likes</a> -->
+                        <!-- <a href="#" class="likes">{{p.likes}} likes</a> -->
 
                         <!-- Route to single page view / conditional formatting for number of comments -->
                         <!-- no comments -->
@@ -80,16 +81,22 @@ export default {
         return{
             likes: 0,
             id: '',
-            sortDirection: 'asc'
+            sortDirection: 'asc',
+            search: ''
         }
     },
     computed: {
         ...mapGetters(['post']),
         ...mapGetters(['isLoggedIn']),
-        sortPost(){
+        sortPost: function(){
             return this.post.sort((a,b) => {
                 return a.datePosted < b.datePosted ? 1: -1
             })            
+        },
+        filteredPost: function(){
+            return this.sortPost.filter((post) => {
+                return post.title.toLowerCase().match(this.search) || post.professor.toLowerCase().match(this.search) || post.post.toLowerCase().match(this.search)
+            })
         }
     },
     methods: {
@@ -120,6 +127,9 @@ a:hover{
 .page-heading{
     padding-top: 1vh;
 }
+.input-field{
+    width: 20vw;
+}
 .post{
     margin-top: 2rem;
 }
@@ -130,6 +140,10 @@ a:hover{
 }
 .card{
     width: 100%;
+    box-shadow: 0 .5rem .75rem 0 rgba(0, 0, 0, 0.2), 0 .5rem 1rem 0 rgba(0, 0, 0, 0.19);
+}
+.posts-card:hover{
+    border: 1px solid rgba(0, 0, 0, 0);
 }
 .card-text{
     padding-top: 2vh;
@@ -137,6 +151,9 @@ a:hover{
 .card-link{
     color: black;
     padding-right: 1rem;
+}
+.likes{
+    padding-right: 2vw;
 }
 #date-posted{
     font-weight: bold;
