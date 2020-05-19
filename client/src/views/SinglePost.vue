@@ -5,37 +5,39 @@
             <!-- post with all comments -->
             <div class="card" >
                 <div class="card-body">
-                    <h3 class="card-title">Is this a good class?</h3>
+                    <h3 class="card-title">{{post.title}}</h3>
                     <!-- need to fix date formatting -->
-                    <h6 class="card-subtitle mb-2 text-muted">Posted 2 hours ago by user</h6>
-                    <span class="badge badge-primary">4339</span> <span class="badge badge-success">fardosht</span>
-                    <p class="card-text">is this a good class to take? are the test hard?</p>
-                    <!-- add number of comments and like button -->
-                    <a to="SinglePost" class="card-link"> # comments </a>
-                    <a href="#" class="notlink"> # likes</a>
+                    <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(post.datePosted).fromNow()}} by {{post.userPosted}}</h6>
+                    <span class="badge badge-primary">{{post.course}}</span> <span class="badge badge-success">{{post.professor}}</span>
+                    <p class="card-text">{{post.post}}</p>
+                    <p v-if="post.comments.length == 0">No comments</p>
+                    <p v-if="post.comments.length == 1">{{post.comments.length}} comment</p>
+                    <p v-if="post.comments.length > 1">{{post.comments.length}} comments</p>
                     <hr>
+
                     <!-- input and button to post a comment -->
-                    <form action="">
+                    <form action="" v-if="isLoggedIn" v-on:submit.prevent="submitComment">
                         <div class="d-flex bd-highlight">
                             <!-- comment input field -->
                             <div class="p-2 flex-grow-1 bd-highlight">
-                                <input type="text" name="comment" class="form-control" placeholder="Comment here...">
+                                <input name='currentComment' v-model='currentComment' type="text" class="form-control" placeholder="Comment here...">
                             </div>
                             <!-- submit button -->
                             <div class="p-2 bd-highlight">
-                                <button class="btn btn-outline-dark">done</button>
+                                <button type="submit" class="btn btn-outline-dark">Done</button>
                             </div>
                         </div>
                     </form>
-                    <hr>
+                    <hr v-if="isLoggedIn">
+
                     <!-- Comment section -->
                     <h4 class="card-title">Comments</h4>
                     <!-- single comment -->
-                    <div class="single-comment">
+                    <div class="single-comment" v-for="(comment, i) in post.comments" :key="i">
                         <!-- comment information -->
-                        <h6 class="card-subtitle mb-2 text-muted">Posted 3 hours ago by user</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(comment.commentdate).fromNow()}}</h6>
                         <!-- comment content -->
-                        <p class="card-text comment-content">I took this class and really like it</p>
+                        <p class="card-text comment-content">{{comment.usercomment}}</p>
                         <hr>
                     </div>
                 </div>
@@ -45,11 +47,44 @@
 </template>
 
 <script>
+import axios from 'axios'
+import moment from 'moment'
 import Navbar from '../components/Navbar.vue'
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
     components: {
         Navbar
+    },
+    data() {
+        return {
+            id: this.$route.params.id,
+            post: [],
+            currentComment: '',
+        }
+    },
+    methods: {
+        moment,
+        async submitComment() {
+            this.post.comments.push({
+                usercomment: this.currentComment // Our temporary value
+            });
+            return this.$http.put('http://localhost:3000/posts/' + this.id, this.post)
+            .then(res => {
+                console.log(res)
+                // clear text field after submit
+                this.currentComment = ''
+            })
+        }
+    },
+    computed: {
+        ...mapGetters(['isLoggedIn'])
+    },
+    async created() {
+        return this.$http.get('http://localhost:3000/posts/' + this.id)
+        .then(res => {
+            this.post = res.data
+        })
     }
 }
 </script>

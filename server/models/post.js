@@ -5,23 +5,20 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    user: {
+    userPosted: {
         type: String,
-        required: true
     },
     datePosted: {
         type: Date,
         required: true,
         default: Date.now()
     },
-    class: {
+    course: {
         type: String,
-        required: false,
         default: ''
     },
     professor: {
         type: String,
-        required: false,
         default: ''
     },
     post: {
@@ -30,9 +27,6 @@ const postSchema = new mongoose.Schema({
     },
     comments:
         [{
-            user: {
-                type: String
-            },
             commentdate:{
                 type: Date,
                 default: Date.now()
@@ -43,7 +37,6 @@ const postSchema = new mongoose.Schema({
         }],
     likes: {
         type: Number,
-        required: false,
         default: 0
     }
 })

@@ -15,16 +15,18 @@ Vue.use(IconsPlugin)
 
 Vue.config.productionTip = false
 
-// load the token
+// Setting up default vue's http modules for api calls
 Vue.prototype.$http = axios;
-const token  = localStorage.getItem('token');
-// if there is a token, set the token header to that token
-if(token){
-  Vue.prototype.$http.defaults.headers.common['token'] = token;
+// Load the token from the localStorage
+const token = localStorage.getItem("token");
+// Is there is any token then we will simply append default axios authorization headers
+if (token) {
+  Vue.prototype.$http.defaults.headers.common['Authorization'] = token;
 }
 
 /* eslint-disable no-new */
 new Vue({
+  store,
   el: '#app',
   router,
   components: { App },

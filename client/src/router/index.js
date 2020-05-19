@@ -14,10 +14,12 @@ import FAQs from '@/views/FAQs'
 Vue.use(Router)
 
 // creates routes for each of the vue pages and export it
-export default new Router({
+const router = new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/login',
       name: 'Login',
       component: Login
     },
@@ -27,7 +29,7 @@ export default new Router({
       component: Signup
     },
     {
-      path: '/home',
+      path: '/',
       name: 'Home',
       component: Home
     },
@@ -37,7 +39,7 @@ export default new Router({
       component: NewPost
     },
     {
-      path: '/singlepost',
+      path: '/post/:id',
       name: 'SinglePost',
       component: SinglePost
     },
@@ -67,3 +69,25 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!store.getters.isLoggedIn) {
+      // Redirect to the Login Page
+      next('/login');
+    } else {
+      next();
+    }
+  } else if (to.matched.some(record => record.meta.requiresGuest)) {
+    if (store.getters.isLoggedIn) {
+      // Redirect to the Login Page
+      next('/profile');
+    } else {
+      next();
+    }
+  } else {
+    next()
+  }
+});
+
+export default router;

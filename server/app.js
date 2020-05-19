@@ -4,23 +4,30 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const logger = require('morgan')
 const mongoose = require('mongoose')
+const passport = require('passport')
 
 //set up express app
 const app = express()
 
+//middleware
+app.use(logger('dev'))
+app.use(bodyParser.json())
+app.use(cors())
+
+// Use the passport Middleware
+app.use(passport.initialize());
+// Bring in the Passport Strategy
+require('./config/passport')(passport);
+
 //connect to DB with mongoose
-mongoose.connect('mongodb+srv://user:12345@cis4339-watty.mongodb.net/test?retryWrites=true&w=majority', {
+const db = require('./config/keys').mongoURI;
+mongoose.connect(db, {
     useNewUrlParser: true, useUnifiedTopology: true
 }).then(() => {
     console.log("Datebase connected!")
 }).catch(err => {
     console.log("Cannot connect to database!")
 })
-
-//middleware
-app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(cors())
 
 //initial routes
 const classes = require('./routes/api/classes')
