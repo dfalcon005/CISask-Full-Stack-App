@@ -33,7 +33,7 @@
                     <!-- Comment section -->
                     <h4 class="card-title">Comments</h4>
                     <!-- single comment -->
-                    <div class="single-comment" v-for="(comment, i) in post.comments" :key="i">
+                    <div class="single-comment" v-for="(comment, i) in sortComments" :key="i">
                         <!-- comment information -->
                         <h6 class="card-subtitle mb-2 text-muted">Posted {{moment(comment.commentdate).fromNow()}}</h6>
                         <!-- comment content -->
@@ -78,7 +78,12 @@ export default {
         }
     },
     computed: {
-        ...mapGetters(['isLoggedIn'])
+        ...mapGetters(['isLoggedIn']),
+        sortComments(){
+            return this.post.comments.sort((a,b) => {
+                return a.commentdate < b.commentdate ? 1: -1
+            }) 
+        }
     },
     async created() {
         return this.$http.get('http://localhost:3000/posts/' + this.id)

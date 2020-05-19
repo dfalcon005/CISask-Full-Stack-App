@@ -1,0 +1,4 @@
+Do not have a json for users due to security reaspons and passwords are hashed in the database.
+If you want to test with a created user you can login with these credentials:
+username: test
+password: test

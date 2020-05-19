@@ -1,0 +1,34 @@
+[
+    {
+        "_id": "5ea9cb543ba80e4d9ce280b5",
+        "eventname": "Career Fair",
+        "description": "The College of Technology will be inviting companies from around the Houston area who are looking for bright, talented, and motivated students.",
+        "date": "2020-04-25T00:00:00.000Z",
+        "additional": "Dress to impress and bring your resume!",
+        "__v": 0
+    },
+    {
+        "_id": "5ea9cb543ba80e4d9ce280b6",
+        "eventname": "Grill Fest",
+        "description": "Come out and network with your fellow student organizations. Complimentary food and beverages",
+        "date": "2020-03-26T00:00:00.000Z",
+        "additional": "College of Technology Grounds",
+        "__v": 0
+    },
+    {
+        "_id": "5ea9cb543ba80e4d9ce280b7",
+        "eventname": "Cougar Tech Meeting",
+        "description": "Meeting for Courgar Tech",
+        "date": "2020-05-25T00:00:00.000Z",
+        "additional": "T2 Building-Room 204",
+        "__v": 0
+    },
+    {
+        "_id": "5ea9cb543ba80e4d9ce280b8",
+        "eventname": "Tech or Treat",
+        "description": "Come play some games and get some candy with the College of Technolgy organizations",
+        "date": "2019-10-31T00:00:00.000Z",
+        "additional": "College of Technology Grounds",
+        "__v": 0
+    }
+]

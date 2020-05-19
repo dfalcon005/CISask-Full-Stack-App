@@ -1,0 +1,229 @@
+[
+    {
+        "_id": "5ea9c8793ba80e4d9ce28092",
+        "coursenumber": "2332",
+        "name": "Information Technology Hardware and Systems Software",
+        "description": "A conceptual and technological survey of the structure of distributed information systems architectures, operating systems, network operating systems, data management systems, application development environments, peripheral technology, and user interfaces.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce28093",
+                "firstname": "Brandon",
+                "lastname": "GreenField"
+            },
+            {
+                "_id": "5ea9c8793ba80e4d9ce28094",
+                "firstname": "Peter",
+                "lastname": "Weber"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "5ea9c8793ba80e4d9ce28095",
+        "coursenumber": "2334",
+        "name": "Information Systems Applications",
+        "description": "Concepts and production skills relating to information systems technologies, procedures, and resources.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce28096",
+                "firstname": "Kyhia",
+                "lastname": "Bostic"
+            },
+            {
+                "_id": "5ea9c8793ba80e4d9ce28097",
+                "firstname": "Houghton",
+                "lastname": "Brown"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "5ea9c8793ba80e4d9ce28098",
+        "coursenumber": "2336",
+        "name": "Internet Application Development",
+        "description": "Internet and World Wide Web Technologies. Development and maintenance of Web sites and Web applications.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce28099",
+                "firstname": "Mehran",
+                "lastname": "Viseh"
+            },
+            {
+                "_id": "5ea9c8793ba80e4d9ce2809a",
+                "firstname": "Sajida",
+                "lastname": "Faiyaz"
+            },
+            {
+                "_id": "5ea9c8793ba80e4d9ce2809b",
+                "firstname": "Negin",
+                "lastname": "Tabrizi"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "5ea9c8793ba80e4d9ce2809c",
+        "coursenumber": "2337",
+        "name": "Fundamentals of Information Security",
+        "description": "Information security, including technical security issues, people security issues, policy issues, privacy, and ethics.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce2809d",
+                "firstname": "Chris",
+                "lastname": "Bronk"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "5ea9c8793ba80e4d9ce2809e",
+        "coursenumber": "2348",
+        "name": "Information Systems Application Development",
+        "description": "Development of information systems applications using modern application development technologies.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce2809f",
+                "firstname": "Gandhimathi",
+                "lastname": "Velusamy"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "5ea9c8793ba80e4d9ce280a0",
+        "coursenumber": "3343",
+        "name": "Information Systems Analysis & Design",
+        "description": "Development and evaluation of information systems with relation to efficiency and cost.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce280a1",
+                "firstname": "Houghton",
+                "lastname": "Brown"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "5ea9c8793ba80e4d9ce280a2",
+        "coursenumber": "3347",
+        "name": "Information Systems Infrastructure and Networks ",
+        "description": "Data communications standards, protocols, models, architectures, internet topics, and ethics. Components of industry infrastructure with business justification. Study of emerging technologies and trends related to software/hardware components.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce280a3",
+                "firstname": "Jose",
+                "lastname": "Martinez"
+            },
+            {
+                "_id": "5ea9c8793ba80e4d9ce280a4",
+                "firstname": "Mehran",
+                "lastname": "Viseh"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "5ea9c8793ba80e4d9ce280a5",
+        "coursenumber": "3355",
+        "name": "Integrated Information Systems ",
+        "description": "Evaluation of integrated information systems.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce280a6",
+                "firstname": "Yunpeng",
+                "lastname": "Zhang"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "5ea9c8793ba80e4d9ce280a7",
+        "coursenumber": "3365",
+        "name": "Database Management",
+        "description": "Applications of hierarchical and relational database systems.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce280a8",
+                "firstname": "Bret",
+                "lastname": "Detillier"
+            },
+            {
+                "_id": "5ea9c8793ba80e4d9ce280a9",
+                "firstname": "Xuqing",
+                "lastname": "Wu"
+            },
+            {
+                "_id": "5ea9c8793ba80e4d9ce280aa",
+                "firstname": "Abdi",
+                "lastname": "Sadeghi"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "5ea9c8793ba80e4d9ce280ab",
+        "coursenumber": "3368",
+        "name": "Advanced Information Systems Development ",
+        "description": "Use of integrated development tools for full-stack systems development. Architectural planning, technology selection, user interface design concepts, and programming for desktop applications that include database persistence.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce280ac",
+                "firstname": "Otto",
+                "lastname": "Dobretsberger"
+            },
+            {
+                "_id": "5ea9c8793ba80e4d9ce280ad",
+                "firstname": "Gandhimathi",
+                "lastname": "Velusamy"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "5ea9c8793ba80e4d9ce280ae",
+        "coursenumber": "4338",
+        "name": "Database Administration and Implementation",
+        "description": "Database implementation for a multi-user environment, including usage analysis, database application development, and query optimization.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce280af",
+                "firstname": "Susan",
+                "lastname": "Miertschin"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "5ea9c8793ba80e4d9ce280b0",
+        "coursenumber": "4339",
+        "name": "Enterprise Applications Development",
+        "description": "Advanced n-tier client/server application development for an enterprise-wide setting.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce280b1",
+                "firstname": "Fardosht",
+                "lastname": "Amirpanahi"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "5ea9c8793ba80e4d9ce280b2",
+        "coursenumber": "4375",
+        "name": "Project Management and Practice",
+        "description": "Computer Information Systems Capstone course. Information Systems Project Management concepts. Students plan, manage and complete a major semester-long group project involving a multi-user information system application for a client.",
+        "professor": [
+            {
+                "_id": "5ea9c8793ba80e4d9ce280b3",
+                "firstname": "Bret",
+                "lastname": "Detillier"
+            },
+            {
+                "_id": "5ea9c8793ba80e4d9ce280b4",
+                "firstname": "Thomas",
+                "lastname": "Gibbs"
+            }
+        ],
+        "__v": 0
+    }
+]

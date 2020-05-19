@@ -1,7 +1,7 @@
 <template>
     <div>
         <navbar/>
-        <div class="container">
+        <div class="my-container">
             <div class="d-flex bd-highlight">
                 <!-- Profile info -->
                 <div class="profile-info">
@@ -25,7 +25,7 @@
 
             
                 <!-- user post -->
-                <div class="user-posts p-2 w-100 bd-highlight">
+                <div class="user-posts bd-highlight post-section">
                     <!-- Heading -->
                     <h4 class="page-heading">MY POST</h4>
                     <hr>        
@@ -70,6 +70,7 @@
                 </div>
             </div>
         </div>
+        <createPost/>
     </div>
 </template>
 
@@ -77,9 +78,14 @@
 import axios from 'axios'
 import moment from 'moment'
 import Navbar from '../components/Navbar.vue'
+import CreatePost from '../components/CreatePost.vue'
 import { mapActions, mapGetters } from "vuex"
 
 export default {
+    components: {
+      Navbar,
+      CreatePost
+    },
     computed: {
         // get post from post store
         ...mapGetters(['post']),
@@ -96,9 +102,6 @@ export default {
                 return a.datePosted < b.datePosted ? 1: -1
             })            
         }
-    },
-    components: {
-      Navbar
     },
     methods: {
         moment,
@@ -131,13 +134,15 @@ a{
 a:hover{
     color: #4b4b4b;
 }
-.container{
-    padding-top: 2vh;
+.my-container{
+    padding: 2vh 2vw 2vh 2vw;
 }
 .profile-info{
-    padding-top: 1vh;
+    width: 45vw;
+}
+.user-posts{
+    padding-left: 3vw;
     padding-right: 3vw;
-    width: 25vw;
 }
 .post{
     margin-top: 1rem;

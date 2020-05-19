@@ -1,0 +1,310 @@
+[
+    {
+        "datePosted": "2020-03-29T20:34:47.264Z",
+        "course": "2334",
+        "professor": "Kyhia Bostic",
+        "likes": 90,
+        "_id": "5ea9ecca56ff401cf03840dd",
+        "title": "Which class",
+        "userPosted": "etregaskis5",
+        "post": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "2332",
+        "professor": "",
+        "likes": 78,
+        "_id": "5ea9ecca56ff401cf03840e0",
+        "title": "Advice",
+        "userPosted": "test",
+        "post": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-12T20:34:47.264Z",
+        "course": "2332",
+        "professor": "Brandon GreenField",
+        "likes": 91,
+        "_id": "5ea9ecca56ff401cf03840d9",
+        "title": "Advice",
+        "userPosted": "lpeekevout1",
+        "post": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-02-29T20:34:47.264Z",
+        "course": "2336",
+        "professor": "",
+        "likes": 15,
+        "_id": "5ea9ecca56ff401cf03840da",
+        "title": "which professor",
+        "userPosted": "bterrey2",
+        "post": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-05T20:34:47.264Z",
+        "course": "",
+        "professor": "",
+        "likes": 17,
+        "_id": "5ea9ecca56ff401cf03840db",
+        "title": "which professor",
+        "userPosted": "ccadding3",
+        "post": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "",
+        "professor": "",
+        "likes": 8,
+        "_id": "5ea9ecca56ff401cf03840df",
+        "title": "Which class",
+        "userPosted": "nredsull7",
+        "post": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "3343",
+        "professor": "Houghton Brown",
+        "likes": 66,
+        "_id": "5ea9ecca56ff401cf03840e2",
+        "title": "Advice",
+        "userPosted": "crobertaccia",
+        "post": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "3355",
+        "professor": "Yunpeng Zhang",
+        "likes": 1,
+        "_id": "5ea9ecca56ff401cf03840de",
+        "title": "Which class",
+        "userPosted": "atwiggins6",
+        "post": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "3368",
+        "professor": "Otto Dobretsberger",
+        "likes": 96,
+        "_id": "5ea9ecca56ff401cf03840e3",
+        "title": "Advice",
+        "userPosted": "rseabrookb",
+        "post": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "3365",
+        "professor": "Abdi Sadeghi",
+        "likes": 78,
+        "_id": "5ea9ecca56ff401cf03840e1",
+        "title": "Which class",
+        "userPosted": "test",
+        "post": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "2348",
+        "professor": "Abdi Sadeghi",
+        "likes": 94,
+        "_id": "5ea9ecca56ff401cf03840e5",
+        "title": "Advice",
+        "userPosted": "mjeevesd",
+        "post": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "3368",
+        "professor": "Otto Dobretsberger",
+        "likes": 13,
+        "_id": "5ea9ecca56ff401cf03840e7",
+        "title": "Advice",
+        "userPosted": "rfeltoef",
+        "post": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "2336",
+        "professor": "",
+        "likes": 59,
+        "_id": "5ea9ecca56ff401cf03840e6",
+        "title": "which professor",
+        "userPosted": "ccontie",
+        "post": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "",
+        "professor": "",
+        "likes": 10,
+        "_id": "5ea9ecca56ff401cf03840e8",
+        "title": "Which class",
+        "userPosted": "csoallg",
+        "post": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "2332",
+        "professor": "Brandon GreenField",
+        "likes": 4,
+        "_id": "5ea9ecca56ff401cf03840e9",
+        "title": "Question",
+        "userPosted": "sfiggenh",
+        "post": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "3355",
+        "professor": "Yunpeng Zhang",
+        "likes": 39,
+        "_id": "5ea9ecca56ff401cf03840f1",
+        "title": "Advice",
+        "userPosted": "bbaguleyp",
+        "post": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "2348",
+        "professor": "Gandhimathi Velusamy",
+        "likes": 86,
+        "_id": "5ea9ecca56ff401cf03840f2",
+        "title": "Advice",
+        "userPosted": "test",
+        "post": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "2332",
+        "professor": "Peter Weber",
+        "likes": 7,
+        "_id": "5ea9ecca56ff401cf03840f3",
+        "title": "which professor",
+        "userPosted": "tderhamr",
+        "post": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+        "comments": [],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": null,
+        "professor": "Fardosht Amirpanahi",
+        "likes": 20,
+        "_id": "5ea9ecca56ff401cf03840f4",
+        "title": "Which class",
+        "userPosted": "amcgrortys",
+        "post": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+        "comments": [
+            {
+                "commentdate": "2020-04-30T00:31:02.195Z",
+                "_id": "5eaa267ef2b82f0f98d681d4",
+                "usercomment": "4339 is a good class!"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T20:34:47.264Z",
+        "course": "4375",
+        "professor": "Thomas Gibbs",
+        "likes": 75,
+        "_id": "5ea9ecca56ff401cf03840f5",
+        "title": "Advice",
+        "userPosted": "hgillbankst",
+        "post": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+        "comments": [
+            {
+                "commentdate": "2020-04-30T00:31:02.195Z",
+                "_id": "5eaa23f7f2b82f0f98d681d1",
+                "usercomment": "test comment"
+            },
+            {
+                "commentdate": "2020-04-30T16:29:16.553Z",
+                "_id": "5eab0b65ffca4e1bfc4284ef",
+                "usercomment": "test comment"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-29T19:00:00.702Z",
+        "course": "3367",
+        "professor": "Martinez",
+        "likes": 0,
+        "_id": "5ea765372526352af4f4670d",
+        "title": "Should I take this AWS class?",
+        "userPosted": "test",
+        "post": "Is this a good elective? I am interested in the cloud but not sure if it will be too hard with my current schedule.",
+        "comments": [
+            {
+                "commentdate": "2020-04-29T15:48:57.523Z",
+                "_id": "5ea9e0f33ba80e4d9ce280de",
+                "usercomment": "Yes, I am taking this class right now and think it is a great class! Professor Martinez is awesome"
+            },
+            {
+                "commentdate": "2020-04-29T22:45:14.371Z",
+                "_id": "5eaa03c1839b135f3432f800",
+                "usercomment": "I just took it and its a super good class to take!"
+            },
+            {
+                "commentdate": "2020-04-29T22:45:14.371Z",
+                "_id": "5eaa03df839b135f3432f803",
+                "usercomment": "test again"
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "datePosted": "2020-04-28T18:55:58.172Z",
+        "course": "",
+        "professor": "",
+        "likes": 5,
+        "_id": "5ea88d66e0cc714af83719ab",
+        "title": "What is AITP? ",
+        "userPosted": "ljames",
+        "post": "What do you do in this org? I heard about it and kinda want to join but I dont know if it will help me",
+        "comments": [
+            {
+                "commentdate": "2020-04-28T18:55:58.172Z",
+                "_id": "5ea88d66e0cc714af83719ac",
+                "usercomment": "I am in it and I really think it is worth it"
+            },
+            {
+                "commentdate": "2020-04-28T18:55:58.172Z",
+                "_id": "5ea88d66e0cc714af83719ad",
+                "usercomment": "I am in it and I really think it is worth it too. i just got a internship"
+            }
+        ],
+        "__v": 0
+    }
+]
