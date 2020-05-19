@@ -5,11 +5,11 @@
             <form v-on:submit.prevent="newPost">
                 <div class="form-group">
                     <label for="">Title</label>
-                    <input type="text" class="form-control input-field" name="title" v-model="title" placeholder="Title here..." required>
+                    <input type="text" class="form-control" name="title" v-model="title" placeholder="Title here..." required>
                 </div>
                 <div class="form-group" v-if="user">
                     <label for="">User</label>
-                    <select name='userPosted' v-model='userPosted' class="form-control input-field" required>
+                    <select name='userPosted' v-model='userPosted' class="form-control" required>
                         <option disabled>Choose user</option>
                         <option> Anonymous </option>
                         <option> {{user.username}} </option>
@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Class</label>
-                    <select name='course' v-model='course' class="form-control input-field">
+                    <select name='course' v-model='course' class="form-control">
                         <option disabled>Choose Class</option>
                         <option>2332</option>
                         <option>2334</option>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Professor</label>
-                    <select name='professor' v-model='professor' class="form-control input-field">
+                    <select name='professor' v-model='professor' class="form-control">
                         <option disabled>Choose Professor</option>
                         <option>Abdi Sadeghi</option>
                         <option>Brandon GreenField</option>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Post</label>
-                    <textarea class="form-control input-field" rows="5" name="post" v-model="post" placeholder="Post here..." required/>
+                    <textarea class="form-control" rows="5" name="post" v-model="post" placeholder="Post here..." required/>
                 </div>
                 <div class="d-flex flex-row justify-content-end">
                     <button type="submit" class="btn btn-outline-dark">Submit</button>
@@ -122,13 +122,6 @@ export default {
 }
 .form-group{
     padding-top: 2vh;
-}
-.input-field{
-    border: 0;
-    outline: 0;
-    background: transparent;
-    border-radius: 0;
-    border-bottom: 1px solid black;
 }
 .buttondiv{
     width: 2vw;

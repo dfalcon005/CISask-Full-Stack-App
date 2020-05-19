@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav class="navbar navbar-expand-md navbar-dark bg-danger">
-            <h1 class="navbar-brand header-logo" href="#">Univeristy of Houston cis.ask</h1>
+            <h1 class="navbar-brand header-logo" href="#">University of Houston CISask</h1>
         
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -60,5 +60,11 @@ export default {
 <style scoped>
 .btn{
     color: white;
+}
+.navbar{
+    box-shadow: 0 .5rem .75rem rgba(0, 0, 0, 0.2);
+}
+.header-logo{
+    padding-top: 1vh;
 }
 </style>

@@ -31,6 +31,6 @@ export default {
 .circle-btn{
     padding: 1rem;
     border-radius: 50%;
-
+    box-shadow: 0.15rem 0.15rem 0.3rem #b33939;
 }
 </style>
