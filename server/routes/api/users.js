@@ -15,75 +15,75 @@ mongoose.set('useCreateIndex', true);
 const User = require("../../models/user");
 router.use(cors())
 
-//Add user
+
 router.post(
-    "/signup",
-    [
-        // check username
-        check("username", "Please Enter a Valid Username")
-        .not()
-        .isEmpty(),
-        // check email
-        check("email", "Please enter a valid email").isEmail(),
-        // check password
-        check("password", "Please enter a valid password").isLength({
-            min: 6
-        })
-    ],
-    async (req, res) => {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({
-                errors: errors.array()
-            });
-        }
+  "/signup",
+  [
+      check("username", "Please Enter a Valid Username")
+      .not()
+      .isEmpty(),
+      check("email", "Please enter a valid email").isEmail(),
+      check("password", "Please enter a valid password").isLength({
+          min: 6
+      })
+  ],
+  async (req, res) => {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+          return res.status(400).json({
+              errors: errors.array()
+          });
+      }
 
-        //set User object using userSchema
-        const User = req.body;
+      const {
+          username,
+          email,
+          password
+      } = req.body;
+      try {
+          let user = await User.findOne({
+              email
+          });
+          if (user) {
+              return res.status(400).json({
+                  msg: "User Already Exists"
+              });
+          }
 
-        // try and create token if it is a new user
-        try {
-          // check to see if user already exist (username or email)
-            let user = await User.findOne({
-                email
-            });
-            if (user) {
-                return res.status(400).json({
-                    msg: "User Already Exists"
-                });
-            }
+          user = new User({
+              username,
+              email,
+              password
+          });
 
-            user = new User();
+          const salt = await bcrypt.genSalt(10);
+          user.password = await bcrypt.hash(password, salt);
 
-            // hash  the password
-            const salt = await bcrypt.genSalt(10);
-            user.password = await bcrypt.hash(password, salt);
+          await user.save();
 
-            await user.save();
+          const payload = {
+              user: {
+                  id: user.id
+              }
+          };
 
-            const payload = {
-                user: {
-                    id: user.id
-                }
-            };
-
-            jwt.sign(
-                payload,
-                "randomString", {
-                    expiresIn: 10000
-                },
-                (err, token) => {
-                    if (err) throw err;
-                    res.status(200).json({
-                        token
-                    });
-                }
-            );
-        } catch (err) {
-            console.log(err.message);
-            res.status(500).send("Error in Saving");
-        }
-    }
+          jwt.sign(
+              payload,
+              "randomString", {
+                  expiresIn: 10000
+              },
+              (err, token) => {
+                  if (err) throw err;
+                  res.status(200).json({
+                      token
+                  });
+              }
+          );
+      } catch (err) {
+          console.log(err.message);
+          res.status(500).send("Error in Saving");
+      }
+  }
 );
 
 //Login with user
@@ -134,11 +134,13 @@ router.post(
           payload,
           "secret",
           {
-            expiresIn: 3600
+            expiresIn: 604800
           },
           (err, token) => {
             if (err) throw err;
             res.status(200).json({
+              success: true,
+              user: user,
               token
             });
           }
