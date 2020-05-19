@@ -53,7 +53,7 @@
 <script>
 import axios from 'axios'
 import moment from 'moment'
-import Navbar from './Navbar.vue'
+import Navbar from '../components/Navbar.vue'
 
 
 const url = "http://localhost:3000/posts"

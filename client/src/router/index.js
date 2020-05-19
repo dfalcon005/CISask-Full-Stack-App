@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/Login'
-import Signup from '@/components/Signup'
-import Home from '@/components/Home'
-import NewPost from '@/components/NewPost'
-import SinglePost from '@/components/SinglePost'
-import Profile from '@/components/Profile'
-import Events from '@/components/Events'
-import Classes from '@/components/Classes'
-import FAQs from '@/components/FAQs' 
+import Login from '@/views/Login'
+import Signup from '@/views/Signup'
+import Home from '@/views/Home'
+import NewPost from '@/views/NewPost'
+import SinglePost from '@/views/SinglePost'
+import Profile from '@/views/Profile'
+import Events from '@/views/Events'
+import Classes from '@/views/Classes'
+import FAQs from '@/views/FAQs' 
 
 Vue.use(Router)
 

@@ -1,12 +1,12 @@
 <template>
     <div>
         <navbar/>
-        <h2>FAQ</h2>
+        <h2>Events</h2>
     </div>
 </template>
 
 <script>
-import Navbar from './Navbar.vue'
+import Navbar from '../components/Navbar.vue'
 export default {
     components: {
         Navbar
