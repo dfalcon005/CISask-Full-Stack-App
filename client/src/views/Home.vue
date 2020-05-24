@@ -5,7 +5,9 @@
         <div class="container">
             <!-- header for posts with new post button -->
             <div class="d-flex flex-row justify-content-between">
-                <h4 class="page-heading">WHAT'S HAPPENING</h4>
+                <div class="d-flex flex-row">
+                    <h5 class="page-heading">WHAT'S HAPPENING</h5>
+                </div>
                 <div>
                     <input type="text" class="form-control input-field" placeholder="Search post..." v-model="search"/>
                 </div>
@@ -15,7 +17,7 @@
             <!-- this is a single post which loops through the Post api and displays all of them -->
             <div class="post d-flex flex-row" v-for="(p, i) in filteredPost" :key="i">
                 
-                <!-- <div class="like d-flex flex-column justify-content-center">
+                <div class="like d-flex flex-column justify-content-center">
                     <form action="">
                         <button class="btn btn-light likebtn" data-toggle="tooltip" data-placement="top" title="Like this post!">
                             <svg class="bi bi-chevron-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +31,7 @@
                             </svg>
                         </button>
                     </form>
-                </div> -->
+                </div>
 
                 <!-- card -->
                 <div class="card posts-card" >
@@ -42,11 +44,12 @@
                             <span id="user-posted">{{p.userPosted}}</span>
                         </h6>
                         <!-- class and professor tags -->
-                        <span class="badge badge-primary">{{p.course}}</span> <span class="badge badge-success">{{p.professor}}</span>
+                        <!-- <span class="badge badge-primary">{{p.course}}</span>  -->
+                        <span class="badge badge-success">{{p.professor}}</span>
                         <!-- main post content -->
                         <p class="card-text">{{p.post}}</p>
                         <!-- number of comments and likes -->
-                        <!-- <a href="#" class="likes">{{p.likes}} likes</a> -->
+                        <a href="#" class="likes">{{p.likes}} likes</a>
 
                         <!-- Route to single page view / conditional formatting for number of comments -->
                         <!-- no comments -->
@@ -126,6 +129,9 @@ a:hover{
 }
 .page-heading{
     padding-top: 1vh;
+}
+.sort-button{
+    padding-left: 1vw;
 }
 .input-field{
     width: 20vw;

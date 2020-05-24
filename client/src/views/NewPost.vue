@@ -15,7 +15,7 @@
                         <option> {{user.username}} </option>
                     </select>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="">Class</label>
                     <select name='course' v-model='course' class="form-control">
                         <option disabled>Choose Class</option>
@@ -33,7 +33,7 @@
                         <option>4339</option>
                         <option>4375</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="">Professor</label>
                     <select name='professor' v-model='professor' class="form-control">
