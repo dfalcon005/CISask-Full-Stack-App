@@ -4,15 +4,12 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-4">
-                    <!-- card for logo -->
-                    <div class="card">
-                        <div class="card-body text-center login-header">
-                            <h1 class="navbar-brand login-logo">Univeristy of Houston cis.ask</h1>
-                            <h2 class="navbar-brand login-logo">Signup!</h2>
-                        </div>
-                    </div>
                     <!-- card with form -->
                     <div class="card">
+                        <div class="card-body text-center login-header">
+                            <h1 class="navbar-brand login-logo">Univeristy of Houston CISask</h1>
+                            <h2 class="navbar-brand login-logo">Signup!</h2>
+                        </div>
                         <div class="card-body text-center">
                             <form v-on:submit.prevent="registerUser">
                                 <!-- name -->
@@ -99,5 +96,8 @@ form{
 /* logo font to white */
 .login-logo{
     color: white;
+}
+.card{
+  box-shadow: 0 .5rem .75rem 0 rgba(0, 0, 0, 0.2), 0 .5rem 1rem 0 rgba(0, 0, 0, 0.19);
 }
 </style>
