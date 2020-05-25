@@ -1,70 +1,54 @@
 <template>
     <div>
         <navbar/>
-        <div class="my-container">
-            <div class="d-flex bd-highlight">
-                <!-- Profile info -->
-                <div class="profile-info">
-                    <h4 class="page-heading">MY PROFILE</h4>
-                    <hr>
-                    <div class="card" v-if="user">
-                    <div class="card-header" id="info-header">
-                        Profile Information
-                    </div>
-                        <ul class="list-group list-group-flush">
-                            <!-- users name -->
-                            <li class="list-group-item"> <span id="info-header">Name:</span> {{user.name}}</li>
-                            <!-- users username -->
-                            <li class="list-group-item"> <span id="info-header">Username:</span> {{user.username}}</li>
-                            <!-- users email -->
-                            <li class="list-group-item"><span id="info-header">Email:</span> {{user.email}}</li>
-                        </ul>
-                    </div>
+        <div class="container">
+            <div class="profile-info">  
+                <div class="card profile-card" v-if="user">
+                    <img src="../assets/default-profile.jpg" alt="" class="profile-img">
+                    <h2 class="page-heading">{{user.name}}</h2>
+                    <h5 class="page-heading">{{user.username}}</h5>
+                    <p>{{user.email}}</p>
                 </div>
-
-
-            
-                <!-- user post -->
-                <div class="user-posts bd-highlight post-section">
-                    <!-- Heading -->
-                    <h4 class="page-heading">MY POST</h4>
-                    <hr>        
-                    <!-- this is a single post which loops through the Post api and displays all of them -->
-                    <div class="post d-flex flex-row" v-for="(p, i) in sortPost" :key="i">
-
-                        <!-- delete option -->
-                        <div class="d-flex flex-column justify-content-center">
-                            <button class="btn btn-link" v-on:click="deletePost(p._id, i)" data-toggle="tooltip" data-placement="top" title="Delete this post">
-                                <svg class="bi bi-trash delete-icon" width="1.25em" height="1.25em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"/>
-                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
-                                </svg>
-                            </button>
-                        </div> 
-
-                        <!-- card -->
-                        <div class="card posts-card" >
-                            <div class="card-body">
-                                <!-- title of post -->
-                                <h3 class="card-title">{{p.title}}</h3>
-                                <!-- date and user posted -->
-                                <h6 class="card-subtitle mb-2 text-muted">Posted 
-                                    <span id="date-posted">{{moment(p.datePosted).fromNow()}}</span> by 
-                                    <span id="user-posted">{{p.userPosted}}</span>
-                                </h6>
-                                <!-- class and professor tags -->
-                                <span class="badge badge-primary">{{p.course}}</span> <span class="badge badge-success">{{p.professor}}</span>
-                                <!-- post content -->
-                                <p class="card-text">{{p.post}}</p>
+            </div>
+            <!-- <hr> -->
+            <!-- user post -->
+            <div class="user-posts bd-highlight post-section">
+                <!-- Heading -->
+                <h4 class="page-heading">MY POST</h4>
+                <hr>        
+                <!-- this is a single post which loops through the Post api and displays all of them -->
+                <div class="post d-flex flex-row" v-for="(p, i) in sortPost" :key="i">
+                    <!-- delete option -->
+                    <div class="d-flex flex-column justify-content-center">
+                        <button class="btn btn-link" v-on:click="deletePost(p._id, i)" data-toggle="tooltip" data-placement="top" title="Delete this post">
+                            <svg class="bi bi-trash delete-icon" width="1.25em" height="1.25em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"/>
+                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                    </div> 
+                    <!-- card -->
+                    <div class="card posts-card" >
+                        <div class="card-body">
+                            <!-- title of post -->
+                            <h3 class="card-title">{{p.title}}</h3>
+                            <!-- date and user posted -->
+                            <h6 class="card-subtitle mb-2 text-muted">Posted 
+                            <span id="date-posted">{{moment(p.datePosted).fromNow()}}</span> by 
+                            <span id="user-posted">{{p.userPosted}}</span>
+                            </h6>
+                            <!-- class and professor tags -->
+                            <span class="badge badge-primary">{{p.course}}</span> <span class="badge badge-success">{{p.professor}}</span>
+                            <!-- post content -->
+                            <p class="card-text">{{p.post}}</p>
                                 
-                                <!-- Route to single page view / conditional formatting for number of comments -->
-                                <!-- no comments -->
-                                <router-link v-bind:to="'/post/' + p._id"  v-if="p.comments.length == 0" class="card-link stretched-link"> No commments </router-link>
-                                <!-- 1 comment -->
-                                <router-link v-bind:to="'/post/' + p._id"  v-if="p.comments.length == 1" class="card-link stretched-link"> {{p.comments.length}} Comment </router-link>
-                                <!-- more than one comment -->
-                                <router-link v-bind:to="'/post/' + p._id"  v-if="p.comments.length > 1" class="card-link stretched-link"> {{p.comments.length}} Comments </router-link>
-                            </div>
+                            <!-- Route to single page view / conditional formatting for number of comments -->
+                            <!-- no comments -->
+                            <router-link v-bind:to="'/post/' + p._id"  v-if="p.comments.length == 0" class="card-link stretched-link"> No commments </router-link>
+                            <!-- 1 comment -->
+                            <router-link v-bind:to="'/post/' + p._id"  v-if="p.comments.length == 1" class="card-link stretched-link"> {{p.comments.length}} Comment </router-link>
+                            <!-- more than one comment -->
+                            <router-link v-bind:to="'/post/' + p._id"  v-if="p.comments.length > 1" class="card-link stretched-link"> {{p.comments.length}} Comments </router-link>
                         </div>
                     </div>
                 </div>
@@ -128,24 +112,40 @@ export default {
 </script>
 
 <style scoped>
+hr{
+    margin-top: 0;
+    margin-bottom: 3vh;
+}
 a{
     color: black;
 }
 a:hover{
     color: #4b4b4b;
 }
-.my-container{
-    padding: 2vh 6vw 2vh 4vw;
+.container{
+    padding: 2vh 1vw 2vh 1vw;
+}
+.profile-card{
+    width: 15em;
+    padding: 0 0 1vh 0;
+    text-align: center;
+    margin: auto;
+    /* border: 0 */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+}
+.profile-img{
+    width: 15em;
+    height: 14em;
+    padding-bottom: 1vh;
 }
 .profile-info{
-    width: 20vw;
+    padding: 2vh 2vw 2vh 2vw;
 }
 .post-section{
-    width: 60vw;
+    padding-right: 4vw;
 }
 .user-posts{
-    padding-left: 3vw;
-    padding-right: 3vw;
+    padding: 2vh 3vw 0 3vw;
 }
 .post{
     margin-top: 1rem;
@@ -160,7 +160,7 @@ a:hover{
 .btn{
     color: black;
 }
-.card{
+.posts-card{
     width: 100%;
     box-shadow: 0 .5rem .75rem 0 rgba(0, 0, 0, 0.2), 0 .5rem 1rem 0 rgba(0, 0, 0, 0.19);
 }
