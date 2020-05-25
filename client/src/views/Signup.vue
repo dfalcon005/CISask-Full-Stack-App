@@ -33,7 +33,7 @@
                                     <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password..." v-model="confirm_password">
                                 </div>
                                 <!-- done -->
-                                <button type="submit" class="btn btn-outline-dark">Finished!</button>
+                                <button type="submit" class="btn btn-danger">Finished!</button>
                             </form>
                             <router-link to="Login">Already have an account</router-link>
                         </div>

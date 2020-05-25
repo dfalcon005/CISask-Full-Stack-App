@@ -21,7 +21,7 @@
                                     <input type="password" class="form-control" name="password" placeholder="Password..." v-model="password">
                                 </div>
                                 <!-- Login button -->
-                                <input type="submit" class="btn btn-outline-dark" value="Login"/>
+                                <input type="submit" class="btn btn-danger" value="Login"/>
                             </form>
                             <!-- Go to signup page -->
                             <router-link to="Signup">Sign-up Here</router-link>
