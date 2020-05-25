@@ -17,7 +17,7 @@
             <!-- this is a single post which loops through the Post api and displays all of them -->
             <div class="post d-flex flex-row" v-for="(p, i) in filteredPost" :key="i">
                 
-                <div class="like d-flex flex-column justify-content-center">
+                <!-- <div class="like d-flex flex-column justify-content-center">
                     <form action="">
                         <button class="btn btn-light likebtn" data-toggle="tooltip" data-placement="top" title="Like this post!">
                             <svg class="bi bi-chevron-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@
                             </svg>
                         </button>
                     </form>
-                </div>
+                </div> -->
 
                 <!-- card -->
                 <div class="card posts-card" >
@@ -49,7 +49,7 @@
                         <!-- main post content -->
                         <p class="card-text">{{p.post}}</p>
                         <!-- number of comments and likes -->
-                        <a href="#" class="likes">{{p.likes}} likes</a>
+                        <!-- <a href="#" class="likes">{{p.likes}} likes</a> -->
 
                         <!-- Route to single page view / conditional formatting for number of comments -->
                         <!-- no comments -->
