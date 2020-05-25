@@ -6,20 +6,14 @@
   This has been a great learning experience that is still not over as continue learning and add more features.
 
 ## Demo
-#### Signup:
-<img src="demos/signup.gif"/>
+#### Signup and Login:
+<img src="demos/signupAndLogin.gif"/>
 
-#### Login:
-<img src="demos/login.gif"/>
-
-#### Search for a post: 
-<img src="demos/.gif"/>
+#### Realtime search for a post: 
+<img src="demos/search.gif"/>
 
 #### Create a post:
 <img src="demos/createPost.gif"/>
-
-#### Like a post:
-<img src="demos/.gif"/>
 
 #### Comment on a post:
 <img src="demos/createComment.gif"/>
