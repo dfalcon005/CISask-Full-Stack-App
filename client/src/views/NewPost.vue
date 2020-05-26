@@ -124,7 +124,7 @@ form{
 
 }
 .container{
-    padding-top: 4vh;
+    padding: 2vh 2vw 3vh 2vw;
 }
 .card{
     box-shadow: 0 .5rem .75rem 0 rgba(0, 0, 0, 0.2), 0 .5rem 1rem 0 rgba(0, 0, 0, 0.19);

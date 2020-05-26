@@ -5,7 +5,7 @@
             <div class="profile-info">  
                 <div class="card profile-card" v-if="user">
                     <img src="../assets/default-profile.jpg" alt="" class="profile-img">
-                    <h2 class="page-heading">{{user.name}}</h2>
+                    <h3 class="page-heading">{{user.name}}</h3>
                     <h5 class="page-heading">{{user.username}}</h5>
                     <p>{{user.email}}</p>
                 </div>
@@ -126,7 +126,7 @@ a:hover{
     padding: 2vh 1vw 2vh 1vw;
 }
 .profile-card{
-    width: 15em;
+    width: 14em;
     padding: 0 0 1vh 0;
     text-align: center;
     margin: auto;
@@ -134,8 +134,8 @@ a:hover{
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
 }
 .profile-img{
-    width: 15em;
-    height: 14em;
+    width: 14em;
+    height: 13em;
     padding-bottom: 1vh;
 }
 .profile-info{
