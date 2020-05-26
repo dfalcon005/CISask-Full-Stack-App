@@ -130,11 +130,11 @@ a:hover{
 .page-heading{
     padding-top: 1vh;
 }
+.input-field{
+    width: 20rem;
+}
 .sort-button{
     padding-left: 1vw;
-}
-.input-field{
-    width: 20vw;
 }
 .post{
     margin-top: 2rem;
@@ -167,5 +167,10 @@ a:hover{
 #user-posted{
     font-weight: bold;
     font-style: italic;
+}
+@media screen and (max-width: 600px) {
+    .input-field {
+        width: 8em;
+    }
 }
 </style>
