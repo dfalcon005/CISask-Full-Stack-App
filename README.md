@@ -21,3 +21,6 @@
 #### View profile and delete a post:
 <img src="demos/profileAndDelete.gif"/>
 
+### Mobile friendly:
+<img src="demos/mobileview.gif"/>
+
