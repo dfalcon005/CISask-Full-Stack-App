@@ -114,7 +114,7 @@ export default {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 767px) {
     .hamburger-menu {
         display: inline;
     }

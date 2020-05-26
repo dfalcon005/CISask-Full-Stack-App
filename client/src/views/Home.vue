@@ -168,7 +168,7 @@ a:hover{
     font-weight: bold;
     font-style: italic;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
     .input-field {
         width: 8em;
     }
