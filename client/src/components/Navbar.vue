@@ -10,7 +10,7 @@
                 <div class="bar3"></div>
             </div>  
         
-            <div class="collapse navbar-collapse " id="navbarSupportedContent" v-bind:class="computedClass">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" v-bind:class="computedClass">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
                         <router-link class="nav-link nav-item-effects" to="/">Home</router-link>
@@ -75,7 +75,6 @@ export default {
 </script>
 
 <style scoped>
-
 .btn{
     color: white;
 }
